@@ -1,0 +1,37 @@
+---
+
+- name : ubuntu-12.04 | Install apt dependency
+  apt: 
+   name="{{item}}"
+  with_items:
+   - git
+   - python-setuptools
+   - python-paramiko
+   - python-dev
+   - python-pip
+   - python-crypto
+   - build-essential
+
+- name : ubuntu-12.04 | Install python dependency
+  pip: 
+   name="{{item}}"
+  with_items:
+   - Jinja2
+   - PyYAML
+   - paramiko
+   - httplib2
+
+- name: ubuntu-12.04 | Get ansible roles from git
+  git:
+   repo="{{ansible_git_repository}}"
+   dest="{{ansible_src_dir}}"
+   force=no
+   version="{{ansible_git_version}}"
+   accept_hostkey=true
+
+#TODO Make idempotent
+- name: ubuntu-12.04 | Install ansible
+  shell: "python setup.py install"
+  args:
+    chdir: "{{ansible_src_dir}}"
+

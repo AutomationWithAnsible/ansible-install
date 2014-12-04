@@ -1,0 +1,4 @@
+---
+ansible_git_repository : "https://github.com/ansible/ansible.git"
+ansible_git_version    : "HEAD"
+ansible_src_dir        : "/opt/ansible"
