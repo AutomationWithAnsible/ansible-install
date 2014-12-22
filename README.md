@@ -10,6 +10,6 @@ This role uses latest development version of ansible from github, if you would l
 	ansible_install_git_version         : "HEAD"
 	ansible_install_src_dir             : "/opt/ansible"
 	# if you want to force pip to do overwrite/upgrade use 'latest' 
-        ansible_install_state               : "present"
+	ansible_install_state               : "present"
 
 
