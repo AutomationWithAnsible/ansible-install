@@ -31,7 +31,7 @@
     force=yes
   register: git
 
-# Use latest if in useing HEAD
+# Use latest if using HEAD
 - name: ubuntu-12.04 | Install ansible
   pip:
     name="{{ ansible_install_src_dir }}/"
